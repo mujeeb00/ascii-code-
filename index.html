@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII ASSIGN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-image: url(./img2.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="input-group input-group-lg m-5 form-outline w-25">
+        <span class="input-group-text" id="inputGroup-sizing-lg">ASCII CODE</span>
+        <input type="text" class="form-control" id="input" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+      </div>
+      <button type="button" id="subm" class="btn btn-outline-secondary">Submit</button>
+      <br>
+      <br>
+      <br>
+      <h1 id="result"></h1>     
+    </center>
+
+<script>
+    
+    const asci = {
+        chr: function(num) {
+          return String.fromCharCode(64 + num);
+        }
+      };
+      
+      const input = document.getElementById('input');
+      const button = document.getElementById('subm');
+      const result = document.getElementById('result');
+       button.addEventListener("click", function() {
+        let num = parseInt(input.value);
+        if (num >= 1 && num <= 26) {
+          result.innerText = asci.chr(num);
+        } else {
+          result.innerText = "Invalid Enter a number between 1 and 26.";
+        }
+      });
+      
+</script>
+      
+</body>
+</html>
